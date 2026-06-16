@@ -1,6 +1,6 @@
 # 사이트 공통 설정
 # 배포 도메인 확정 후 BASE_URL 을 실제 도메인으로 변경하세요.
-BASE_URL = "https://www.uiwang-massage.example.com"
+BASE_URL = "https://uiwang-massage.pages.dev"
 
 BRAND = "간다GO 의왕 출장마사지"
 PHONE = "0508-202-4719"
