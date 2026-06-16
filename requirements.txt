@@ -1,0 +1,4 @@
+# build.py / indexnow.py / publish.py 는 표준 라이브러리만 사용 — 설치 불필요.
+# 아래는 google_index.py(구글 Indexing API)에만 필요하다.
+google-auth>=2.0.0
+requests>=2.25.0
