@@ -1,0 +1,11 @@
+# Netlify 자동 배포 설정
+# GitHub 푸시 → build.py 실행 → 생성된 정적 사이트 전체(루트)를 그대로 게시한다.
+# build.py 는 표준 라이브러리만 사용하므로 별도 의존성 설치가 필요 없다.
+# 디렉터리형 URL(/about/ → /about/index.html)과 404.html 은 Netlify 가 자동 처리한다.
+
+[build]
+  command = "python3 build.py"
+  publish = "."
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
