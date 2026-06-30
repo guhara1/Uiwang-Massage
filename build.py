@@ -23,6 +23,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import PAGES
 from content.site import (BASE_URL, BRAND, INDEXNOW_KEY, NAV, PHONE,
                           PHONE_DISPLAY, SITE_DESC)
+from content.reviews import reviews_section_html, service_jsonld
+from content.related import related_section_html
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 MIN_INDEX_CHARS = 2000
@@ -140,8 +142,18 @@ def render_page(page: dict) -> str:
     h1 = page["h1"]
     body = page["body"]
     crumbs = page.get("breadcrumb") or []
-    extra_head = page.get("extra_head", "")
+    extra_head = page.get("extra_head", "") + service_jsonld(path)
     hero = page.get("hero", "")
+
+    # 이용 후기·평점 + 내부링크 블록을 본문 말미(최종 CTA 앞)에 삽입한다.
+    extras = reviews_section_html(path) + related_section_html(path)
+    if extras:
+        marker = '<section class="cta">'
+        pos = body.rfind(marker)
+        if pos != -1:
+            body = body[:pos] + extras + body[pos:]
+        else:
+            body = body + extras
 
     chars = text_length(body)
     noindex = page.get("noindex", False) or chars < MIN_INDEX_CHARS
