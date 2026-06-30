@@ -13,5 +13,5 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://uiwang-massage.pages.dev/sitemap.xml
-Sitemap: https://uiwang-massage.pages.dev/rss.xml
+Sitemap: https://uiwang-massage.netlify.app/sitemap.xml
+Sitemap: https://uiwang-massage.netlify.app/rss.xml

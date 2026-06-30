@@ -76,7 +76,7 @@ python3 indexnow.py           # IndexNow 단독 실행 (빙·네이버, 의존�
 
 ### 최초 1회 등록 절차
 
-1. 사이트를 `uiwang-massage.pages.dev`에 배포 (키 파일·sitemap·rss 포함 확인)
+1. 사이트를 `uiwang-massage.netlify.app`에 배포 (키 파일·sitemap·rss 포함 확인)
 2. **네이버 서치어드바이저**: 사이트 인증(메타태그 완료) → 사이트맵 `…/sitemap.xml`,
    RSS `…/rss.xml` 제출 → IndexNow는 `indexnow.py`로 통보
 3. **구글 서치콘솔**: 속성 추가 → 사이트맵 `…/sitemap.xml` 제출 → URL 검사로 색인 요청
