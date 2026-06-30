@@ -668,3 +668,67 @@ th { background: var(--panel-2); color: var(--gold-soft); font-family: var(--ser
   .page-content section { padding: 26px 22px 22px; border-radius: 14px; }
   .cta { padding: 36px 20px; }
 }
+
+/* ── 이용 후기·평점 ─────────────────────────────── */
+.page-content section.reviews { padding-bottom: 26px; }
+.rating-summary {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px;
+  margin: 6px 0 14px;
+}
+.rating-score {
+  font-family: var(--serif); font-weight: 900; font-size: 2.1rem;
+  color: var(--gold-soft); line-height: 1;
+}
+.rating-out { color: var(--text-dim); font-size: 0.95rem; }
+.rating-count { color: var(--text-dim); font-size: 0.88rem; }
+.stars {
+  color: var(--gold); letter-spacing: 2px; font-size: 1.02rem;
+  white-space: nowrap;
+}
+.reviews-note { color: var(--text-dim); font-size: 0.86rem; margin: 0 0 18px; }
+.review-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.review-card {
+  background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px 18px; margin: 0;
+}
+.review-head {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 8px;
+}
+.review-author { color: var(--gold-soft); font-weight: 700; font-size: 0.94rem; }
+.review-head .stars { font-size: 0.92rem; }
+.review-date { color: var(--text-dim); font-size: 0.78rem; margin-left: auto; }
+.review-body { margin: 0; color: var(--text-dim); font-size: 0.92rem; line-height: 1.7; }
+
+/* ── 함께 찾는 지역·내부링크 ─────────────────────── */
+.related-lead { color: var(--text-dim); margin: 4px 0 16px; }
+.related-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.related-card { margin: 0; }
+.related-card a {
+  display: flex; flex-direction: column; gap: 4px;
+  height: 100%; padding: 15px 16px;
+  background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 12px; color: var(--text); transition: 0.18s;
+}
+.related-card a:hover {
+  border-color: var(--gold); color: var(--gold-soft);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, #13203a, var(--panel-2));
+}
+.related-anchor { font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; }
+.related-blurb { color: var(--text-dim); font-size: 0.82rem; }
+.related-card a:hover .related-blurb { color: var(--gold-soft); }
+
+@media (max-width: 640px) {
+  .review-list, .related-grid { grid-template-columns: 1fr; }
+  .rating-score { font-size: 1.8rem; }
+}
